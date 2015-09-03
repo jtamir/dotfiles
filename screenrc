@@ -1,0 +1,35 @@
+shell -$SHELL
+
+# Big scrollback
+defscrollback 5000
+
+# No annoying startup message
+startup_message off
+
+# Display the status line
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.kW}%-w%{.bW}%t [%n]%{-}%+w %=%{..G} %H %{..Y} %Y/%m/%d %c"
+
+# Setup screens
+#screen -t 'one' 0 bash
+screen -t 'one' 1 bash
+screen -t 'two' 2 bash
+screen -t 'three' 3 bash
+
+# Switch to the first screen
+select 1
+
+termcapinfo xterm* ti@:te@
+
+#Start or re-attach: screen -DR. Think of it as the screen doctor. This is the first thing I type after I ssh into a remote machine. If screen is already running, it attaches to it, otherwise it starts a new session.
+#
+#Essential Commands
+#
+#All screen commands start with Ctrl-a.
+#
+#Move between terminals: Ctrl-a <num>, so to go to window 1, hold down Ctrl and press a. Release Ctrl, and press number 1.
+#Detach: Ctrl-a d. This is what I type at the end of the day. That leaves everything as it is, and I can re-attach to the sessions next time I ssh in.
+#Exit:Ctrl-a \. Closes all your terminals and exits screen. I very rarely use this.
+#Help: Ctrl-a ?. The help is pretty opaque. Hence this blog post :-)
+#Create: Ctrl-a c. Creates a new terminal. When you’re done using it, simply exit like you normally would. If you find yourself often creating more terminals, edit your .screenrc to start with more.
