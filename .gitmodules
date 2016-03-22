@@ -1,0 +1,6 @@
+[submodule "comments.vim"]
+	path = comments.vim
+	url = git@github.com:jtamir/comments.vim.git
+[submodule "taglist.vim"]
+	path = taglist.vim
+	url = git@github.com:jtamir/taglist.vim.git

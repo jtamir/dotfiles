@@ -10,6 +10,58 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
+
+"----------------------------
+" For Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+:call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'tpope/vim-fugitive'
+Plugin 'elzr/vim-json'
+Plugin 'will133/vim-dirdiff'
+Plugin 'vim-latex/vim-latex'
+Plugin 'jtamir/comments.vim'
+Plugin 'jtamir/taglist.vim'
+Plugin 'twerth/ir_black'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" ---------------------------
+
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
 " options, so any other options should be set AFTER setting 'compatible'.
@@ -17,9 +69,7 @@ runtime! debian.vim
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the
 " following enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+syntax on
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -44,18 +94,62 @@ set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
-"set autowrite		" Automatically save before commands like :next and :make
-"set hidden             " Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
-"set noexpandtab
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
-set hlsearch
+
+" Always display the status line, even if only one window is displayed
+set laststatus=2
+
+set mouse=a		" Enable mouse usage (all modes)
+
+"set hidden             " Hide buffers when they are abandoned
+
+" Display line numbers on the left
 set number
-set t_Co=256
-set tw=120 " line length to be used by the command 'gq'
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+ 
+
+"------------------------------------------------------------
+" Indentation options {{{1
+
+" Indentation settings according to personal preference.
+ 
+" Indentation settings for using 4 spaces instead of tabs.
+" Do not change 'tabstop' from its default value of 8 with this setup.
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+  
+" Indentation settings for using hard tabs for indent. Display tabs as
+" four characters wide.
+"set shiftwidth=4
+"set tabstop=4
+
+
+"------------------------------------------------------------
+" Mappings {{{1
+" "
+" Useful mappings
+  
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+map Y y$
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+"set autowrite		" Automatically save before commands like :next and :make
+"set t_Co=256
+"set tw=120 " line length to be used by the command 'gq'
 colorscheme ir_black
 filetype on
 
@@ -102,7 +196,7 @@ augroup filetypedetect
 augroup END
 
 " EPIC syntax highlighting
-au BufReadPost *.e set syntax=c 
+au BufNewFile,BufRead *.e setlocal ft=epic
 
 " status line modifications
 "set statusline=
@@ -122,20 +216,9 @@ au BufReadPost *.e set syntax=c
 "hi User5 guifg=#eeee40 guibg=#222222
 hi StatusLine ctermbg=white ctermfg=blue
 hi StatusLineNC ctermbg=grey ctermfg=white
-set laststatus=2
 
 " vimdiff highlighting
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
-
-" pathogen
-execute pathogen#infect()
-
-" Conque
-nnoremap <Leader>ts :ConqueTermSplit bash --rcfile ~/.bash_profile<CR>
-nnoremap <Leader>tv :ConqueTermVSplit bash --rcfile ~/.bash_profile<CR>
-let g:ConqueTerm_FastMode = 0
-let g:ConqueTerm_Color = 1
-
