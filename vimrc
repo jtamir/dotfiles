@@ -29,10 +29,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 Plugin 'will133/vim-dirdiff'
-Plugin 'vim-latex/vim-latex'
+Plugin 'jtamir/vim-latex'
 Plugin 'jtamir/comments.vim'
 Plugin 'jtamir/taglist.vim'
-Plugin 'twerth/ir_black'
+Plugin 'jtamir/ir_black'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
