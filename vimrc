@@ -33,6 +33,7 @@ Plugin 'jtamir/vim-latex'
 Plugin 'jtamir/comments.vim'
 Plugin 'jtamir/taglist.vim'
 Plugin 'jtamir/ir_black'
+Plugin 'tpope/vim-dispatch'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -222,3 +223,8 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+
+" vim-dispatch
+map <leader>lr :Start! latexmk -pdf -pdflatex="pdflatex --shell-escape \%O \%S" %<CR>
+
