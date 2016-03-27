@@ -1,6 +1,0 @@
-[submodule "comments.vim"]
-	path = vim-plugins/comments.vim
-	url = git@github.com:jtamir/comments.vim.git
-[submodule "taglist.vim"]
-	path = vim-plugins/taglist.vim
-	url = git@github.com:jtamir/taglist.vim.git
