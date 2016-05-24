@@ -123,11 +123,11 @@ set hlsearch
 
 " Indentation settings according to personal preference.
  
-" Indentation settings for using 4 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+" Indentation settings for using 8 column tabs
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
+set noexpandtab " change to expandtab for spaces instead of tabs
   
 " Indentation settings for using hard tabs for indent. Display tabs as
 " four characters wide.
