@@ -1,0 +1,17 @@
+[user]
+	name = Jon Tamir
+	email = jtamir@eecs.berkeley.edu
+[core]
+	editor = mvim -f
+[diff]
+	tool = mvimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[push]
+	default = simple
+[mergetool "fugitive"]
+	cmd = mvim -f -c \"Gvdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
