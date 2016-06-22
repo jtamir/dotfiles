@@ -19,3 +19,34 @@ alias xfig='xfig -geometry 950x700+50+20 -metric -startgridmode 3 -specialtext -
 
 alias skim='open -a Skim'
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
+
+pushd()
+{
+  if [ $# -eq 0 ]; then
+    DIR="${HOME}"
+  else
+    DIR="$1"
+  fi
+
+  builtin pushd "${DIR}" > /dev/null
+  echo -n "DIRSTACK: "
+  dirs
+}
+
+pushd_builtin()
+{
+  builtin pushd > /dev/null
+  echo -n "DIRSTACK: "
+  dirs
+}
+
+popd()
+{
+  builtin popd > /dev/null
+  echo -n "DIRSTACK: "
+  dirs
+}
+
+alias cd='pushd'
+alias back='popd'
+alias flip='pushd_builtin'
