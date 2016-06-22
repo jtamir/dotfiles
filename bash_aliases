@@ -17,9 +17,6 @@ alias shutdown='sudo shutdown -P now'
 
 alias xfig='xfig -geometry 950x700+50+20 -metric -startgridmode 3 -specialtext -latexfonts -startlatexFont default'
 
-alias skim='open -a Skim'
-alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
-
 pushd()
 {
   if [ $# -eq 0 ]; then

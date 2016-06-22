@@ -2,9 +2,9 @@
 	name = Jon Tamir
 	email = jtamir@eecs.berkeley.edu
 [core]
-	editor = mvim -f
+	editor = vim
 [diff]
-	tool = mvimdiff
+	tool = vimdiff
 [difftool]
 	prompt = false
 [alias]
@@ -12,6 +12,6 @@
 [push]
 	default = simple
 [mergetool "fugitive"]
-	cmd = mvim -f -c \"Gvdiff\" \"$MERGED\"
+	cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
 	tool = fugitive

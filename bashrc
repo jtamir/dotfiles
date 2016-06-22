@@ -1,4 +1,4 @@
-# this is jon tamir's public bashrc for mac osx
+# this is jon tamir's public bashrc for linux
 
 # color definitions
 BLUE='\e[0;34m'
@@ -96,7 +96,6 @@ fi
 # ssh shortcuts
 alias sshmikgiant='ssh -Y mikgiant'
 alias sshmikbull='ssh -Y mikbull'
-alias sshsurbeck='ssh -Y surbeck7t'
 alias sshdr4='ssh -Y dr4'
 
 
@@ -113,25 +112,21 @@ export LSCOLORS=exfxbxdxcxegedabagacad
 export SVN_EDITOR=vim
 
 # CUDA
-#export PATH=$PATH:/Developer/NVIDIA/CUDA/bin
-#export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA/lib:$DYLD_LIBRARY_PATH
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # BART
-export TOOLBOX_PATH=/Users/jtamir/dev/bart_git
+export TOOLBOX_PATH=/home/jtamir/bart-private
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
 export DEBUG_LEVEL=4
-export OMP_NUM_THREADS=4
+export OMP_NUM_THREADS=40
 
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-	. /opt/local/etc/profile.d/bash_completion.sh
-fi
 
-# MacPorts Installer addition on 2016-03-21_at_17:49:40: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
+# tmp dir under my name
+mkdir -p /tmp/jtamir
 
-# added by Anaconda2 2.5.0 installer
-export PATH="/Users/jtamir/anaconda/bin:$PATH"
+# write current DISPLAY variable to a file, so that tmux can update it quickly
+echo $DISPLAY > ~/.DISPLAY
 
-export PATH=/Users/jtamir/bin:$PATH
+export PATH=/home/jtamir/bin:$PATH
