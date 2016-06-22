@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # enable color support of ls and also add handy aliases
-alias ls='ls -G'
-alias lsl='ls -lth'
-alias lsa='ls -Ath'
+alias ls='ls --color=auto'
+alias lsl='ls -lh'
+alias lsa='ls -Ah'
 alias l='ls -CFh'
 
 alias grep='grep --color=auto'
