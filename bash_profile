@@ -1,3 +1,4 @@
+#!/bin/bash
 # this is jon tamir's public bashrc for linux
 
 # color definitions
@@ -119,7 +120,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export TOOLBOX_PATH=/home/jtamir/bart-private
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
-export DEBUG_LEVEL=4
+export DEBUG_LEVEL=5
 export OMP_NUM_THREADS=40
 
 
