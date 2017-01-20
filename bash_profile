@@ -117,7 +117,7 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # BART
-export TOOLBOX_PATH=/home/jtamir/bart-private
+export TOOLBOX_PATH=~/bart
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
 export DEBUG_LEVEL=5
@@ -130,4 +130,4 @@ mkdir -p /tmp/jtamir
 # write current DISPLAY variable to a file, so that tmux can update it quickly
 echo $DISPLAY > ~/.DISPLAY
 
-export PATH=/home/jtamir/bin:$PATH
+export PATH=~/bin:$PATH
