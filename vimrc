@@ -134,6 +134,9 @@ set noexpandtab " change to expandtab for spaces instead of tabs
 "set shiftwidth=4
 "set tabstop=4
 
+" for python, use spaces
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
 
 "------------------------------------------------------------
 " Mappings {{{1
