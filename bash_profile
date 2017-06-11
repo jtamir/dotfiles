@@ -121,7 +121,7 @@ export TOOLBOX_PATH=~/bart
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
 export DEBUG_LEVEL=5
-export OMP_NUM_THREADS=40
+export OMP_NUM_THREADS=20
 
 
 # tmp dir under my name
