@@ -2,7 +2,8 @@
 
 # enable color support of ls and also add handy aliases
 alias ls='ls --color=auto'
-alias lsl='ls -lh'
+alias lsl='ls -lth'
+alias lsr='ls -ltrh'
 alias lsa='ls -Ah'
 alias l='ls -CFh'
 
