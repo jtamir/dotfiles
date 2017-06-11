@@ -125,9 +125,13 @@ export OMP_NUM_THREADS=20
 
 
 # tmp dir under my name
-mkdir -p /tmp/jtamir
+mkdir -p /tmp/jtamir/recon
 
 # write current DISPLAY variable to a file, so that tmux can update it quickly
 echo $DISPLAY > ~/.DISPLAY
 
 export PATH=~/bin:$PATH
+
+export PATH=/home/jtamir/.local/bin:$PATH
+source /home/jtamir/.secret_keys
+

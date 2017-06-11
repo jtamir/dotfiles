@@ -1,2 +1,4 @@
 *.swp
 vim-plugins/
+secret_keys.sh
+ssh_config
