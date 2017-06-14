@@ -3,8 +3,11 @@
 # enable color support of ls and also add handy aliases
 alias ls='ls -G'
 alias lsl='ls -lth'
+alias lsr='ls -ltrh'
 alias lsa='ls -Ath'
 alias l='ls -CFh'
+
+alias lessx='less -X'
 
 alias grep='grep --color=auto'
 alias cgrep='grep --color=always'
