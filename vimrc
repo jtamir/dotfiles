@@ -34,6 +34,8 @@ Plugin 'jtamir/comments.vim'
 Plugin 'jtamir/taglist.vim'
 Plugin 'jtamir/ir_black'
 Plugin 'tpope/vim-dispatch'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
