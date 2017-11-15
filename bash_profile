@@ -129,7 +129,14 @@ if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
 	. /opt/local/etc/profile.d/bash_completion.sh
 fi
 
-# MacPorts Installer addition on 2016-03-21_at_17:49:40: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/Users/jtamir/.local/bin:$PATH
+source /Users/jtamir/.secret_keys
+
+##
+# Your previous /Users/jtamir/.bash_profile file was backed up as /Users/jtamir/.bash_profile.macports-saved_2016-11-13_at_14:23:36
+##
+
+# MacPorts Installer addition on 2016-11-13_at_14:23:36: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
