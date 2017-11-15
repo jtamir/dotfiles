@@ -122,7 +122,7 @@ export SVN_EDITOR=vim
 export TOOLBOX_PATH=/Users/jtamir/dev/bart_git
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
-export DEBUG_LEVEL=4
+export DEBUG_LEVEL=5
 export OMP_NUM_THREADS=4
 
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
