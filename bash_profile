@@ -140,7 +140,10 @@ source /Users/jtamir/.secret_keys
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-# added by Anaconda2 2.5.0 installer
-export PATH="/Users/jtamir/anaconda/bin:$PATH"
-
 export PATH=/Users/jtamir/bin:$PATH
+
+
+# added by Miniconda3 4.3.14 installer
+export PATH="/Users/jtamir/miniconda3/bin:$PATH"
+
+export PYTHONPATH=/Users/jtamir/bart/python:$PYTHONPATH
