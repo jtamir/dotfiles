@@ -96,8 +96,10 @@ fi
 # ssh shortcuts
 alias sshmikgiant='ssh -Y mikgiant'
 alias sshmikbull='ssh -Y mikbull'
+alias sshmikshoov='ssh -Y mikshoov'
 alias sshsurbeck='ssh -Y surbeck7t'
 alias sshdr4='ssh -Y dr4'
+alias sshindy='ssh -Y indy'
 
 
 # history bindings
