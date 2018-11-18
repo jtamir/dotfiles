@@ -232,3 +232,8 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " vim-dispatch
 map <leader>lr :Start! latexmk -pdf -pdflatex="pdflatex --shell-escape \%O \%S" %<CR>
 
+if has("mouse_sgr")
+	set ttymouse=sgr
+else
+	set ttymouse=xterm2
+end
