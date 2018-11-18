@@ -135,3 +135,11 @@ export PATH=~/bin:$PATH
 export PATH=/home/jtamir/.local/bin:$PATH
 source /home/jtamir/.secret_keys
 
+export PATH=/home/jtamir/miniconda3/bin:$PATH
+export OX_INSTALL_DIRECTORY=/home/jtamir/projects/ox-bart/orchestra-sdk/sdk
+export PYTHONPATH=/home/jtamir/bart/python:/home/jtamir//projects/mri-sim-py/epg:/home/jtamir/tools/sigpy:$PYTHONPATH
+
+source /opt/intel/compilers_and_libraries_2017.4.196/linux/bin/iccvars.sh intel64
+
+FFTW_PATH="/home/jtamir/tools/fftw-3.3.6-pl2/build"
+export LD_LIBRARY_PATH=${FFTW_PATH}/lib:${LD_LIBRARY_PATH}
