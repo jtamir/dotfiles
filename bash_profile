@@ -132,14 +132,29 @@ echo $DISPLAY > ~/.DISPLAY
 
 export PATH=~/bin:$PATH
 
-export PATH=/home/jtamir/.local/bin:$PATH
-source /home/jtamir/.secret_keys
+export PATH=${HOME}/.local/bin:$PATH
+source ${HOME}/.secret_keys
 
-export PATH=/home/jtamir/miniconda3/bin:$PATH
-export OX_INSTALL_DIRECTORY=/home/jtamir/projects/ox-bart/orchestra-sdk/sdk
-export PYTHONPATH=/home/jtamir/bart/python:/home/jtamir//projects/mri-sim-py/epg:/home/jtamir/tools/sigpy:$PYTHONPATH
+#export PATH=${HOME}/miniconda3/bin:$PATH
+#export OX_INSTALL_DIRECTORY=${HOME}/projects/ox-bart/orchestra-sdk/sdk
+#export PYTHONPATH=${HOME}/bart/python:${HOME}//projects/mri-sim-py/epg:${HOME}/tools/sigpy:$PYTHONPATH
 
-source /opt/intel/compilers_and_libraries_2017.4.196/linux/bin/iccvars.sh intel64
+#source /opt/intel/compilers_and_libraries_2017.4.196/linux/bin/iccvars.sh intel64
 
-FFTW_PATH="/home/jtamir/tools/fftw-3.3.6-pl2/build"
-export LD_LIBRARY_PATH=${FFTW_PATH}/lib:${LD_LIBRARY_PATH}
+#FFTW_PATH="${HOME}/tools/fftw-3.3.6-pl2/build"
+#export LD_LIBRARY_PATH=${FFTW_PATH}/lib:${LD_LIBRARY_PATH}
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jon/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jon/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jon/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jon/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
