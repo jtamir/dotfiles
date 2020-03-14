@@ -94,12 +94,7 @@ fi
 
 
 # ssh shortcuts
-alias sshmikgiant='ssh -Y mikgiant'
-alias sshmikbull='ssh -Y mikbull'
-alias sshmikshoov='ssh -Y mikshoov'
-alias sshsurbeck='ssh -Y surbeck7t'
-alias sshdr4='ssh -Y dr4'
-alias sshindy='ssh -Y indy'
+source ${HOME}/.ssh_aliases
 
 
 # history bindings
@@ -143,7 +138,25 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH=/Users/jtamir/bin:$PATH
 
 
-# added by Miniconda3 4.3.14 installer
-export PATH="/Users/jtamir/miniconda3/bin:$PATH"
 
 export PYTHONPATH=/Users/jtamir/bart/python:$PYTHONPATH
+
+# MacPorts Installer addition on 2019-01-02_at_17:46:08: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jtamir/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jtamir/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jtamir/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jtamir/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
