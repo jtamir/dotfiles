@@ -230,5 +230,5 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 
 " vim-dispatch
-map <leader>lr :Start! latexmk -pdf -pdflatex="pdflatex --shell-escape \%O \%S" %<CR>
+map <leader>lr :Start! latexmk -pdf -pdflatex="pdflatex --shell-escape \%O \%S" main.tex<CR>
 
