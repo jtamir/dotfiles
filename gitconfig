@@ -1,6 +1,6 @@
 [user]
 	name = Jon Tamir
-	email = jtamir@eecs.berkeley.edu
+	email = jtamir@utexas.edu
 [core]
 	editor = mvim -f
 [diff]
@@ -14,4 +14,6 @@
 [mergetool "fugitive"]
 	cmd = mvim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
-	tool = fugitive
+	tool = fugitive:q
+[credential]
+	helper = osxkeychain
