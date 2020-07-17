@@ -26,7 +26,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 Plugin 'will133/vim-dirdiff'
