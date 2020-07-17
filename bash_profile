@@ -114,7 +114,7 @@ export SVN_EDITOR=vim
 #export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA/lib:$DYLD_LIBRARY_PATH
 
 # BART
-export TOOLBOX_PATH=/Users/jtamir/dev/bart_git
+export TOOLBOX_PATH=${HOME}/dev/bart_git
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
 export DEBUG_LEVEL=5
@@ -124,8 +124,8 @@ if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
 	. /opt/local/etc/profile.d/bash_completion.sh
 fi
 
-export PATH=/Users/jtamir/.local/bin:$PATH
-source /Users/jtamir/.secret_keys
+export PATH=${HOME}/.local/bin:$PATH
+source ${HOME}/.secret_keys
 
 ##
 # Your previous /Users/jtamir/.bash_profile file was backed up as /Users/jtamir/.bash_profile.macports-saved_2016-11-13_at_14:23:36
@@ -135,11 +135,11 @@ source /Users/jtamir/.secret_keys
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export PATH=/Users/jtamir/bin:$PATH
+export PATH=${HOME}/bin:$PATH
 
 
 
-export PYTHONPATH=/Users/jtamir/bart/python:$PYTHONPATH
+export PYTHONPATH=${HOME}/bart/python:$PYTHONPATH
 
 # MacPorts Installer addition on 2019-01-02_at_17:46:08: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
@@ -147,14 +147,14 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jtamir/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/jon/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/jtamir/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jtamir/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "${HOME}/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/jtamir/miniconda3/bin:$PATH"
+        export PATH="${HOME}/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
