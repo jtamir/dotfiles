@@ -55,7 +55,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1="\[$GREEN\]\u@\h \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
+	PS1="\[$GREEN\]\u@$(scutil --get ComputerName) \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
 	#PS1="\[\e[$GREEN\]\]\u@\h \[\e[$CYAN\]\]\w/\[\e[$GREEN\]\] \$\[\e[$WHITE\]\] "
 	#PS1='\[\032[1m\033[32m\]\u@\h \w\[\033[0m\]\$ '
 
