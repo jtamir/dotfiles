@@ -115,11 +115,14 @@ export SVN_EDITOR=vim
 # CUDA
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export CUDA_DEVICE_ORDER=PCI_BUS_ID
+
 
 # BART
 export TOOLBOX_PATH=~/bart
 export PATH=$TOOLBOX_PATH:$PATH
 source $TOOLBOX_PATH/scripts/bart_completion.sh
+export OX_INSTALL_DIRECTORY=/home/jon/dev/ox-bart/sdk
 export DEBUG_LEVEL=5
 export OMP_NUM_THREADS=20
 
@@ -137,9 +140,9 @@ source ${HOME}/.secret_keys
 
 #export PATH=${HOME}/miniconda3/bin:$PATH
 #export OX_INSTALL_DIRECTORY=${HOME}/projects/ox-bart/orchestra-sdk/sdk
-#export PYTHONPATH=${HOME}/bart/python:${HOME}//projects/mri-sim-py/epg:${HOME}/tools/sigpy:$PYTHONPATH
+export PYTHONPATH=${HOME}/bart/python:${HOME}//projects/mri-sim-py/epg:${HOME}/tools/sigpy:$PYTHONPATH
 
-#source /opt/intel/compilers_and_libraries_2017.4.196/linux/bin/iccvars.sh intel64
+source /opt/intel/compilers_and_libraries_2020.4.304/linux/bin/iccvars.sh intel64
 
 #FFTW_PATH="${HOME}/tools/fftw-3.3.6-pl2/build"
 #export LD_LIBRARY_PATH=${FFTW_PATH}/lib:${LD_LIBRARY_PATH}
@@ -158,3 +161,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+conda activate pytorch
