@@ -18,4 +18,12 @@ vim +PluginInstall +qall
 ln -s ~/dotfiles/vim-syntax ~/.vim/syntax
 mkdir bin
 ln -s ${HOME}/dotfiles/skelescript.sh bin/skelescript.sh
+# install miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+conda create --name pytorch
+conda activate pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+pip install -r dotfiles/requirements.txt
 ```
+

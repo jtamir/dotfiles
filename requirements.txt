@@ -1,0 +1,11 @@
+h5py
+jupyter
+ipython
+scikit-image
+scikit-learn
+scipy
+numpy
+matplotlib
+tqdm
+tensorboard
+torchvision
