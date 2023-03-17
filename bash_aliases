@@ -18,6 +18,9 @@ alias shutdown='sudo shutdown -P now'
 
 alias xfig='xfig -geometry 950x700+50+20 -metric -startgridmode 3 -specialtext -latexfonts -startlatexFont default'
 
+alias jtsync='rsync -av --progress'
+alias nvsmi='watch -n .1 nvidia-smi'
+
 pushd()
 {
   if [ $# -eq 0 ]; then
