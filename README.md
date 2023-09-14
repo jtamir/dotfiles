@@ -17,3 +17,9 @@ ln -s dotfiles/secret_keys.sh .secret_keys
 rsync -av --progress dotfiles/bin .
 vim +PluginInstall +qall
 ln -s ~/dotfiles/vim-syntax ~/.vim/syntax
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+bash ./Miniconda3-latest-MacOSX-arm64.sh
+conda create --name pytorch
+conda activate pytorch
+conda install pytorch torchvision torchaudio -c pytorch
+pip install -r dotfiles/requirements.txt
