@@ -2,3 +2,11 @@ macvim
 git
 bash-completion
 wget
+bash
+fftw-3-single
+gcc12
+libpng
+openblas
+flock
+ffmpeg
+ImageMagick
