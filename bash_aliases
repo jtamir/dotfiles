@@ -13,7 +13,7 @@ alias grep='grep --color=auto'
 alias cgrep='grep --color=always'
 alias psg='ps aux | head -1 ; ps aux | grep'
 
-alias make='colormake'
+#alias make='colormake'
 
 alias restart='sudo shutdown -r now'
 alias shutdown='sudo shutdown -P now'
