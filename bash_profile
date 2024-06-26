@@ -61,6 +61,12 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+hostname_file=/etc/willtherealhostnamepleasestandup
+if [ -f ${hostname_file} ]; then
+	export DISPLAYNAME=$(cat ${hostname_file})
+else
+	export DISPLAYNAME=$(scutil --get ComputerName)
+fi
 if [ "$color_prompt" = yes ]; then
 	PS1="\[$GREEN\]\u@${DISPLAYNAME} \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
 	#PS1="\[\e[$GREEN\]\]\u@\h \[\e[$CYAN\]\]\w/\[\e[$GREEN\]\] \$\[\e[$WHITE\]\] "
