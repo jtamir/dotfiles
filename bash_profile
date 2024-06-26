@@ -43,6 +43,13 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
+hostname_file=/etc/willtherealhostnamepleasestandup
+if [ -f ${hostname_file} ]; then
+        export DISPLAYNAME=$(cat ${hostname_file})
+else
+        export DISPLAYNAME=$(scutil --get ComputerName)
+fi
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -55,7 +62,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1="\[$GREEN\]\u@$(scutil --get ComputerName) \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
+	PS1="\[$GREEN\]\u@${DISPLAYNAME} \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
 	#PS1="\[\e[$GREEN\]\]\u@\h \[\e[$CYAN\]\]\w/\[\e[$GREEN\]\] \$\[\e[$WHITE\]\] "
 	#PS1='\[\032[1m\033[32m\]\u@\h \w\[\033[0m\]\$ '
 
@@ -69,7 +76,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@${DISPLAYNAME}: \w\a\]$PS1"
     ;;
 *)
     ;;
