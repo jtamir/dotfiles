@@ -55,22 +55,29 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-	PS1="\[$GREEN\]\u@\h \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
-	#PS1="\[\e[$GREEN\]\]\u@\h \[\e[$CYAN\]\]\w/\[\e[$GREEN\]\] \$\[\e[$WHITE\]\] "
-	#PS1='\[\032[1m\033[32m\]\u@\h \w\[\033[0m\]\$ '
+hostname_file=/etc/willtherealhostnamepleasestandup
+if [ -f ${hostname_file} ]; then
+	export DISPLAYNAME=$(cat ${hostname_file})
+else
+	export DISPLAYNAME=$HOSTNAME
+fi
 
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+if [ "$color_prompt" = yes ]; then
+	PS1="\[$GREEN\]\u@${DISPLAYNAME} \[$CYAN\]\w\[$GREEN\] \$\[$WHITE\] "
+	#PS1="\[\e[$GREEN\]\]\u@${DISPLAYNAME} \[\e[$CYAN\]\]\w/\[\e[$GREEN\]\] \$\[\e[$WHITE\]\] "
+	#PS1='\[\032[1m\033[32m\]\u@${DISPLAYNAME} \w\[\033[0m\]\$ '
+
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@${DISPLAYNAME}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    #PS1='\[\033[0;32m\]\u@\h \w\$ \[\033[0;38m\]'
+    #PS1='${debian_chroot:+($debian_chroot)}\u@${DISPLAYNAME}:\w\$ '
+    #PS1='\[\033[0;32m\]\u@${DISPLAYNAME} \w\$ \[\033[0;38m\]'
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@${DISPLAYNAME}: \w\a\]$PS1"
     ;;
 *)
     ;;
