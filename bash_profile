@@ -132,6 +132,7 @@ source $TOOLBOX_PATH/scripts/bart_completion.sh
 export OX_INSTALL_DIRECTORY=/home/jon/dev/ox-bart/sdk
 export DEBUG_LEVEL=5
 export OMP_NUM_THREADS=20
+export HVTOOLS_PATH=${HOME}/dev/hvtools
 
 
 # tmp dir under my name
@@ -141,13 +142,14 @@ mkdir -p /tmp/jtamir/recon
 echo $DISPLAY > ~/.DISPLAY
 
 export PATH=~/bin:$PATH
+export PATH=$HVTOOLS_PATH:$PATH
 
 export PATH=${HOME}/.local/bin:$PATH
 source ${HOME}/.secret_keys
 
 #export PATH=${HOME}/miniconda3/bin:$PATH
 #export OX_INSTALL_DIRECTORY=${HOME}/projects/ox-bart/orchestra-sdk/sdk
-export PYTHONPATH=${HOME}/bart/python:${HOME}//projects/mri-sim-py/epg:${HOME}/tools/sigpy:$PYTHONPATH
+export PYTHONPATH=${HOME}/bart/python:${HOME}//projects/mri-sim-py/epg:${HOME}/tools/sigpy:$HVTOOLS_PATH:$PYTHONPATH
 
 source /opt/intel/compilers_and_libraries_2020.4.304/linux/bin/iccvars.sh intel64
 
