@@ -5,6 +5,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone git@github.com:jtamir/dotfiles
 cd ~
 git checkout -b mac origin/mac
+cat dotfiles/ports.lst | xargs -n1 sudo port install
 ln -s dotfiles/bashrc .bashrc
 ln -s dotfiles/bash_profile .bash_profile
 ln -s dotfiles/bash_aliases .bash_aliases
