@@ -128,10 +128,14 @@ export SVN_EDITOR=vim
 
 # BART
 export TOOLBOX_PATH=${HOME}/dev/bart_git
-export PATH=$TOOLBOX_PATH:$PATH
-source $TOOLBOX_PATH/scripts/bart_completion.sh
+export BART_TOOLBOX_PATH=${TOOLBOX_PATH}
+export PATH=$BART_TOOLBOX_PATH:$PATH
+source $BART_TOOLBOX_PATH/scripts/bart_completion.sh
 export DEBUG_LEVEL=5
+export BART_DEBUG_LEVEL=${DEBUG_LEVEL}
 export OMP_NUM_THREADS=4
+
+export PATH=/opt/local/libexec/gnubin/:$PATH
 
 if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
 	. /opt/local/etc/profile.d/bash_completion.sh
@@ -144,38 +148,43 @@ source ${HOME}/.secret_keys
 # Your previous /Users/jtamir/.bash_profile file was backed up as /Users/jtamir/.bash_profile.macports-saved_2016-11-13_at_14:23:36
 ##
 
-# MacPorts Installer addition on 2016-11-13_at_14:23:36: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 export PATH=${HOME}/bin:$PATH
 
+export PYTHONPATH=${BART_TOOLBOX_PATH}/python:${HOME}/tools/biblib:$PYTHONPATH
 
-
-export PYTHONPATH=${TOOLBOX_PATH}/python:${HOME}/tools/biblib:$PYTHONPATH
-
-# MacPorts Installer addition on 2019-01-02_at_17:46:08: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jon/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/jon/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "${HOME}/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/jon/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jon/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="${HOME}/miniconda3/bin:$PATH"
+        export PATH="/Users/jon/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-conda activate pytorch
+#conda activate pytorch
 
 # MacPorts Installer addition on 2024-01-17_at_14:57:26: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
-
+#
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/Users/jon/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/Users/jon/miniforge3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
